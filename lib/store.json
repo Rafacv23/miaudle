@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Catnip Farm",
+    "icon": "",
+    "price": 10,
+    "description": "Automatically generates 1 cat every second.",
+    "multiplier": 1
+  },
+  {
+    "id": 2,
+    "name": "Kitten Playground",
+    "icon": "",
+    "price": 50,
+    "description": "Increase cat generation speed by 20%.",
+    "multiplier": 1.2
+  },
+  {
+    "id": 3,
+    "name": "Cat Condo",
+    "icon": "",
+    "price": 100,
+    "description": "Doubles the number of cats generated per second.",
+    "multiplier": 2
+  },
+  {
+    "id": 4,
+    "name": "Catnip Factory",
+    "icon": "",
+    "price": 200,
+    "description": "Triples the production of catnip, increasing cat generation speed by 50%.",
+    "multiplier": 1.5
+  },
+  {
+    "id": 5,
+    "name": "Cat Sanctuary",
+    "icon": "",
+    "price": 500,
+    "description": "Quadruples the number of cats generated per second.",
+    "multiplier": 4
+  }
+]
