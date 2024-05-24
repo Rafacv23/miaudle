@@ -4,9 +4,20 @@ export type IconSvgProps = SVGProps<SVGSVGElement> & {
   size?: number
 }
 
-export interface CatStore {
-  cats: number
-  increasePopulation: () => void
-  removeAllCats: () => void
-  updateCats: (newCats: number) => void
+export interface Store {
+  id: number
+  name: string
+  icon: string
+  price: number
+  description: string
+  multiplier: number
+  existencies?: number
+}
+
+export interface Upgrade {
+  id: number
+  name: string
+  icon: string
+  price: number
+  description: string
 }
