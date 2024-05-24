@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React from "react"
 import { Card, CardFooter } from "@nextui-org/card"
 import { Image } from "@nextui-org/image"
 import { Button } from "@nextui-org/button"
@@ -8,7 +8,7 @@ import { useStore } from "@/lib/CatsStorage"
 
 export default function Cat() {
   const cats = useStore((state) => state.cats)
-  const increasePopulation = useStore((state) => state.increasePopulation)
+  const increasePopulation = useStore((state) => state.increaseCats)
 
   return (
     <Card isFooterBlurred radius="lg" className="border-none">
