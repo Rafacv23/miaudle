@@ -8,7 +8,7 @@ import { useStore } from "@/lib/CatsStorage"
 
 export default function Cat() {
   const cats = useStore((state) => state.cats)
-  const increasePopulation = useStore((state) => state.increaseCats)
+  const increaseCats = useStore((state) => state.increaseCats)
 
   return (
     <Card isFooterBlurred radius="lg" className="border-none">
@@ -31,7 +31,7 @@ export default function Cat() {
           color="default"
           radius="lg"
           size="sm"
-          onClick={increasePopulation}
+          onClick={increaseCats}
         >
           Collect
         </Button>
