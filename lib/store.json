@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "name": "Catnip Farm",
-    "icon": "",
+    "name": "Milk glass",
+    "icon": "https://cdn-icons-png.flaticon.com/128/869/869664.png",
     "price": 10,
     "quantity": 0,
     "catsPerSecond": 1,
@@ -12,7 +12,7 @@
   {
     "id": 2,
     "name": "Kitten Playground",
-    "icon": "",
+    "icon": "https://cdn-icons-png.flaticon.com/128/1864/1864106.png",
     "price": 50,
     "quantity": 0,
     "catsPerSecond": 10,
@@ -22,7 +22,7 @@
   {
     "id": 3,
     "name": "Cat Condo",
-    "icon": "",
+    "icon": "https://cdn-icons-png.flaticon.com/128/7813/7813214.png",
     "price": 100,
     "quantity": 0,
     "catsPerSecond": 1,
@@ -32,7 +32,7 @@
   {
     "id": 4,
     "name": "Catnip Factory",
-    "icon": "",
+    "icon": "https://cdn-icons-png.flaticon.com/128/4532/4532490.png",
     "price": 200,
     "quantity": 0,
     "catsPerSecond": 1,
@@ -42,7 +42,7 @@
   {
     "id": 5,
     "name": "Cat Sanctuary",
-    "icon": "",
+    "icon": "https://cdn-icons-png.flaticon.com/128/2975/2975946.png",
     "price": 500,
     "quantity": 0,
     "catsPerSecond": 1,
