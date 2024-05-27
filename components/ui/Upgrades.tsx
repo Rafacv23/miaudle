@@ -12,9 +12,15 @@ export default function Upgrades() {
   }
   return (
     <section>
-      <h2>Upgrades</h2>
+      <h2 className="text-2xl font-semibold mb-4">UPGRADES</h2>
       <ul>
-        {upgrades ? upgrades.map((upgrade) => <li key={upgrade.id}>{upgrade.name} | {upgrade.price}</li>) : null}
+        {upgrades
+          ? upgrades.map((upgrade) => (
+              <li key={upgrade.id}>
+                {upgrade.name} | {upgrade.price}
+              </li>
+            ))
+          : null}
       </ul>
     </section>
   )
