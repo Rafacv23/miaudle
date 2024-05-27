@@ -14,7 +14,7 @@ export default function Upgrades() {
     <section>
       <h2>Upgrades</h2>
       <ul>
-        {upgrades ? upgrades.map((upgrade) => <li>{upgrade.name}</li>) : null}
+        {upgrades ? upgrades.map((upgrade) => <li key={upgrade.id}>{upgrade.name} | {upgrade.price}</li>) : null}
       </ul>
     </section>
   )
