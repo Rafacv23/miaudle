@@ -18,7 +18,11 @@ export default function Store() {
       <ul>
         {stores.length > 0 ? (
           stores.map((adquisition) => (
-            <li key={adquisition.name}>{adquisition.name}</li>
+            <li key={adquisition.id}>
+              <button>
+                {adquisition.name} | {adquisition.price}
+              </button>
+            </li>
           ))
         ) : (
           <li>Loading stores...</li>
