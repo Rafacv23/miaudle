@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { Card, CardFooter } from "@nextui-org/card"
+import { Card, CardBody, CardFooter } from "@nextui-org/card"
 import { Image } from "@nextui-org/image"
 import { Button } from "@nextui-org/button"
 import useAutoIncrementCats, { useStore } from "@/lib/CatsStorage"
@@ -17,14 +17,16 @@ export default function Cat() {
         <Button>Settings</Button>
         <Button>About</Button>
       </header>
-      <Image
-        alt="Cat"
-        className="object-cover cursor-pointer"
-        src="/cat.png"
-        width={300}
-        isZoomed
-        onClick={increaseCats}
-      />
+      <CardBody className="items-center flex">
+        <Image
+          alt="Cat"
+          className="object-cover cursor-pointer"
+          src="/cat.png"
+          width={300}
+          isZoomed
+          onClick={increaseCats}
+        />
+      </CardBody>
       <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
         <p className="text-tiny text-white/80">
           Total cats: {cats} | Cats per second: {catsPerSecond}
