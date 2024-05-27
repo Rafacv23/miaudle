@@ -9,6 +9,7 @@ export interface Store {
   name: string
   icon: string
   price: number
+  catsPerSecond: number
   description: string
   multiplier: number
   existencies?: number
