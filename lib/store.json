@@ -13,7 +13,7 @@
     "name": "Kitten Playground",
     "icon": "",
     "price": 50,
-    "catsPerSecond": 1,
+    "catsPerSecond": 10,
     "description": "Increase cat generation speed by 20%.",
     "multiplier": 1.2
   },
