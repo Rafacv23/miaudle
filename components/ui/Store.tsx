@@ -3,6 +3,7 @@
 import React, { useEffect } from "react"
 import { useStore } from "@/lib/CatsStorage"
 import { Button } from "@nextui-org/button"
+import { Tooltip } from "@nextui-org/tooltip"
 
 export default function Store() {
   const fetchStores = useStore((state) => state.fetchStores)
@@ -43,12 +44,14 @@ export default function Store() {
         {stores.length > 0 ? (
           stores.map((adquisition) => (
             <li key={adquisition.id}>
-              <Button
-                isDisabled={cats < adquisition.price}
-                onClick={() => buyStore(adquisition.id)}
-              >
-                {adquisition.name} | {adquisition.price}
-              </Button>
+              <Tooltip content={`Cats per second ${adquisition.catsPerSecond}`}>
+                <Button
+                  isDisabled={cats < adquisition.price}
+                  onClick={() => buyStore(adquisition.id)}
+                >
+                  {adquisition.name} | {adquisition.price}
+                </Button>
+              </Tooltip>
             </li>
           ))
         ) : (
