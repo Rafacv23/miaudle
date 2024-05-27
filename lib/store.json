@@ -4,6 +4,7 @@
     "name": "Catnip Farm",
     "icon": "",
     "price": 10,
+    "catsPerSecond": 1,
     "description": "Automatically generates 1 cat every second.",
     "multiplier": 1
   },
@@ -12,6 +13,7 @@
     "name": "Kitten Playground",
     "icon": "",
     "price": 50,
+    "catsPerSecond": 1,
     "description": "Increase cat generation speed by 20%.",
     "multiplier": 1.2
   },
@@ -20,6 +22,7 @@
     "name": "Cat Condo",
     "icon": "",
     "price": 100,
+    "catsPerSecond": 1,
     "description": "Doubles the number of cats generated per second.",
     "multiplier": 2
   },
@@ -28,6 +31,7 @@
     "name": "Catnip Factory",
     "icon": "",
     "price": 200,
+    "catsPerSecond": 1,
     "description": "Triples the production of catnip, increasing cat generation speed by 50%.",
     "multiplier": 1.5
   },
@@ -36,6 +40,7 @@
     "name": "Cat Sanctuary",
     "icon": "",
     "price": 500,
+    "catsPerSecond": 1,
     "description": "Quadruples the number of cats generated per second.",
     "multiplier": 4
   }
