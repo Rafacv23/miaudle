@@ -7,8 +7,8 @@ import Start from "@/components/ui/Start"
 export default function Home() {
   let playing = useStore((state) => state.playing)
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-      <div className="inline-block max-w-2xl text-center justify-center">
+    <section className="flex flex-col items-center justify-center min-h-screen py-8 md:py-10">
+      <div className=" max-w-full text-center">
         {playing ? <Play /> : <Start />}
       </div>
     </section>
