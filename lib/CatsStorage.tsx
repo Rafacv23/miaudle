@@ -6,6 +6,7 @@ import type { Store, Upgrade } from "@/types"
 interface State {
   playing: boolean
   cats: number
+  catsPerSecond: number
   upgrades: Upgrade[]
   stores: Store[]
   fetchUpgrades: () => void
@@ -20,6 +21,7 @@ interface State {
 export const useStore = create<State>((set) => ({
   playing: false,
   cats: 0,
+  catsPerSecond: 0,
   stores: [],
   upgrades: [],
   increaseCats: () => set((state) => ({ cats: state.cats + 1 })),
