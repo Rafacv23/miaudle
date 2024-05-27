@@ -3,6 +3,7 @@
 import React, { useEffect } from "react"
 import { useStore } from "@/lib/CatsStorage"
 import { Button } from "@nextui-org/button"
+import { Divider } from "@nextui-org/divider"
 
 export default function Store() {
   const fetchStores = useStore((state) => state.fetchStores)
@@ -43,45 +44,48 @@ export default function Store() {
   return (
     <section>
       <h2 className="text-2xl font-semibold mb-4">STORE</h2>
-      <ul role="list" className="divide-y divide-gray-200">
+      <ul role="list">
         {stores.length > 0 &&
           stores.map((adquisition) => (
-            <li
-              key={adquisition.id}
-              className="flex justify-between items-center py-5"
-            >
-              <div className="flex gap-x-4">
-                <img
-                  className="h-12 w-12 flex-none rounded-full bg-gray-50"
-                  src={adquisition.icon}
-                  alt={adquisition.name}
-                />
-                <div className="flex flex-col">
-                  <p className="text-sm font-semibold leading-6 text-white">
-                    {adquisition.name}
+            <>
+              <li
+                key={adquisition.id}
+                className="flex justify-between items-center py-5"
+              >
+                <div className="flex gap-x-4">
+                  <img
+                    className="h-12 w-12 flex-none rounded-full bg-gray-50"
+                    src={adquisition.icon}
+                    alt={adquisition.name}
+                  />
+                  <div className="flex flex-col">
+                    <p className="text-sm font-semibold leading-6 text-white">
+                      {adquisition.name}
+                    </p>
+                    <p className="mt-1 text-xs leading-5 text-gray-300">
+                      {adquisition.description}
+                    </p>
+                  </div>
+                </div>
+                <div className="hidden sm:flex sm:flex-col sm:items-end">
+                  <p className="text-sm leading-6 text-white">
+                    {adquisition.price} price
                   </p>
                   <p className="mt-1 text-xs leading-5 text-gray-300">
-                    {adquisition.description}
+                    {adquisition.catsPerSecond} Cats per Second
                   </p>
                 </div>
-              </div>
-              <div className="hidden sm:flex sm:flex-col sm:items-end">
-                <p className="text-sm leading-6 text-white">
-                  {adquisition.price} price
-                </p>
-                <p className="mt-1 text-xs leading-5 text-gray-300">
-                  {adquisition.catsPerSecond} Cats per Second
-                </p>
-              </div>
-              <Button
-                color="primary"
-                className="ml-2"
-                onClick={() => buyStore(adquisition.id)}
-                disabled={cats < adquisition.price}
-              >
-                Buy
-              </Button>
-            </li>
+                <Button
+                  color="primary"
+                  className="ml-2"
+                  onClick={() => buyStore(adquisition.id)}
+                  isDisabled={cats < adquisition.price}
+                >
+                  Buy
+                </Button>
+              </li>
+              <Divider orientation="horizontal" />
+            </>
           ))}
       </ul>
     </section>
