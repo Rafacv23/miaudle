@@ -5,7 +5,6 @@ import { Card, CardFooter } from "@nextui-org/card"
 import { Image } from "@nextui-org/image"
 import { Button } from "@nextui-org/button"
 import useAutoIncrementCats, { useStore } from "@/lib/CatsStorage"
-
 export default function Cat() {
   useAutoIncrementCats()
   const cats = useStore((state) => state.cats)
@@ -13,17 +12,18 @@ export default function Cat() {
   const increaseCats = useStore((state) => state.increaseCats)
 
   return (
-    <Card isFooterBlurred radius="lg" className="border-none">
-      <header>
-        <button>Settings</button>
-        <button>About</button>
+    <Card isFooterBlurred radius="lg" className="border-none bg-transparent">
+      <header className="flex justify-between">
+        <Button>Settings</Button>
+        <Button>About</Button>
       </header>
       <Image
         alt="Cat"
-        className="object-cover"
+        className="object-cover cursor-pointer"
         src="/cat.png"
         width={300}
         isZoomed
+        onClick={increaseCats}
       />
       <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
         <p className="text-tiny text-white/80">
