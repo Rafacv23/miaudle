@@ -30,7 +30,11 @@ export default function Store() {
 
       const updatedStores = stores.map((s) =>
         s.id === storeId
-          ? { ...s, price: Math.ceil(s.price * s.multiplier) }
+          ? {
+              ...s,
+              price: Math.ceil(s.price * s.multiplier),
+              quantity: s.quantity + 1,
+            }
           : s
       )
       setStores(updatedStores)
@@ -39,17 +43,20 @@ export default function Store() {
 
   return (
     <section>
-      <h2>Store</h2>
-      <ul>
+      <h2 className="text-2xl font-semibold mb-4">STORE</h2>
+      <ul className="flex flex-col items-start gap-4 justify-center">
         {stores.length > 0 ? (
           stores.map((adquisition) => (
             <li key={adquisition.id}>
               <Tooltip content={`Cats per second ${adquisition.catsPerSecond}`}>
                 <Button
+                  variant="ghost"
+                  color="primary"
                   isDisabled={cats < adquisition.price}
                   onClick={() => buyStore(adquisition.id)}
                 >
-                  {adquisition.name} | {adquisition.price}
+                  {adquisition.name} | {adquisition.price} | Quantity{" "}
+                  {adquisition.quantity}
                 </Button>
               </Tooltip>
             </li>
