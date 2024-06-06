@@ -20,8 +20,15 @@ export const useStore = create<State>(
       setClickPower: (newClickPower: number) => {
         set({ clickPower: newClickPower })
       },
+      clickCats: () =>
+        set((state) => ({
+          cats: state.cats + state.clickPower,
+        })),
       increaseCats: () =>
-        set((state) => ({ cats: state.cats + state.clickPower })),
+        set((state) => ({
+          cats: state.cats + state.catsPerSecond,
+        })),
+
       removeAllCats: () => set({ cats: 0 }),
       updateCats: (newCats) => set({ cats: newCats }),
 
