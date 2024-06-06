@@ -5,11 +5,12 @@ import { Card, CardBody, CardFooter } from "@nextui-org/card"
 import { Image } from "@nextui-org/image"
 import { Button } from "@nextui-org/button"
 import useAutoIncrementCats, { useStore } from "@/lib/CatsStorage"
+
 export default function Cat() {
   useAutoIncrementCats()
-  const cats = useStore((state) => state.cats)
-  const catsPerSecond = useStore((state) => state.catsPerSecond)
-  const increaseCats = useStore((state) => state.increaseCats)
+  const cats = useStore((state) => state.cats.toFixed(2))
+  const catsPerSecond = useStore((state) => state.catsPerSecond.toFixed(2))
+  const clickCats = useStore((state) => state.clickCats)
 
   return (
     <Card isFooterBlurred radius="lg">
@@ -20,7 +21,7 @@ export default function Cat() {
           src="/cat.png"
           width={300}
           isZoomed
-          onClick={increaseCats}
+          onClick={clickCats}
         />
       </CardBody>
       <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
@@ -33,7 +34,7 @@ export default function Cat() {
           color="default"
           radius="lg"
           size="sm"
-          onClick={increaseCats}
+          onClick={clickCats}
         >
           Collect
         </Button>
