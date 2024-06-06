@@ -12,11 +12,7 @@ export default function Cat() {
   const increaseCats = useStore((state) => state.increaseCats)
 
   return (
-    <Card isFooterBlurred radius="lg" className="border-none bg-transparent">
-      <header className="flex justify-between">
-        <Button>Settings</Button>
-        <Button>About</Button>
-      </header>
+    <Card isFooterBlurred radius="lg">
       <CardBody className="items-center flex">
         <Image
           alt="Cat"
