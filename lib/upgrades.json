@@ -1,16 +1,43 @@
 [
   {
     "id": 1,
-    "name": "Juan",
-    "icon": "da",
-    "price": 12,
-    "description": "dawd"
+    "name": "Stronger Click",
+    "icon": "https://cdn-icons-png.flaticon.com/128/869/869664.png",
+    "price": 50,
+    "description": "Increase cats per click by 1.",
+    "type": "click",
+    "value": 1,
+    "requiredCats": 100
   },
   {
     "id": 2,
-    "name": "Juan",
-    "icon": "da",
-    "price": 12,
-    "description": "dawd"
+    "name": "Efficient Clicking",
+    "icon": "https://cdn-icons-png.flaticon.com/128/869/869664.png",
+    "price": 200,
+    "description": "Increase cats per click by 5.",
+    "type": "click",
+    "value": 5,
+    "requiredCats": 500
+  },
+  {
+    "id": 3,
+    "name": "Auto Clicker",
+    "icon": "https://cdn-icons-png.flaticon.com/128/869/869664.png",
+    "price": 500,
+    "description": "Automatically click every second.",
+    "type": "autoClick",
+    "value": 1,
+    "requiredCats": 1000
+  },
+  {
+    "id": 4,
+    "name": "Cat Efficiency",
+    "icon": "https://cdn-icons-png.flaticon.com/128/869/869664.png",
+    "price": 1000,
+    "description": "Increase all cats per second by 10%.",
+    "type": "multiplier",
+    "sotreId": 1,
+    "value": 1.1,
+    "requiredCats": 2000
   }
 ]

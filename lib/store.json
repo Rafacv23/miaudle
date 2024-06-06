@@ -7,7 +7,8 @@
     "quantity": 0,
     "catsPerSecond": 1,
     "description": "Automatically generates 1 cat every second.",
-    "multiplier": 1
+    "multiplier": 1,
+    "requiredCats": 50
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "quantity": 0,
     "catsPerSecond": 10,
     "description": "Increase cat generation speed by 20%.",
-    "multiplier": 1.2
+    "multiplier": 1.2,
+    "requiredCats": 200
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     "quantity": 0,
     "catsPerSecond": 1,
     "description": "Doubles the number of cats generated per second.",
-    "multiplier": 2
+    "multiplier": 2,
+    "requiredCats": 500
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     "quantity": 0,
     "catsPerSecond": 1,
     "description": "Triples the production of catnip, increasing cat generation speed by 50%.",
-    "multiplier": 1.5
+    "multiplier": 1.5,
+    "requiredCats": 1000
   },
   {
     "id": 5,
@@ -47,6 +51,7 @@
     "quantity": 0,
     "catsPerSecond": 1,
     "description": "Quadruples the number of cats generated per second.",
-    "multiplier": 4
+    "multiplier": 4,
+    "requiredCats": 2000
   }
 ]
