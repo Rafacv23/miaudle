@@ -1,9 +1,8 @@
-"use client"
-
 import React, { useEffect } from "react"
 import { useStore } from "@/lib/CatsStorage"
 import { Button } from "@nextui-org/button"
 import { Divider } from "@nextui-org/divider"
+import { Card } from "@nextui-org/card"
 
 export default function Store() {
   const fetchStores = useStore((state) => state.fetchStores)
@@ -42,17 +41,14 @@ export default function Store() {
   }
 
   return (
-    <section>
+    <Card className="p-8 ">
       <h2 className="text-2xl font-semibold mb-4">STORE</h2>
       <ul role="list">
         {stores.length > 0 &&
           stores.map((adquisition) => (
-            <>
-              <li
-                key={adquisition.id}
-                className="flex justify-between items-center py-5"
-              >
-                <div className="flex gap-x-4">
+            <React.Fragment key={adquisition.id}>
+              <li className="flex justify-between gap-8 items-center py-5">
+                <div className="flex gap-x-4 items-center">
                   <img
                     className="h-12 w-12 flex-none rounded-full bg-gray-50"
                     src={adquisition.icon}
@@ -62,7 +58,7 @@ export default function Store() {
                     <p className="text-sm font-semibold leading-6 text-white">
                       {adquisition.name}
                     </p>
-                    <p className="mt-1 text-xs leading-5 text-gray-300">
+                    <p className="mt-1 text-xs leading-5 text-gray-300 hidden xl:flex">
                       {adquisition.description}
                     </p>
                   </div>
@@ -73,10 +69,14 @@ export default function Store() {
                   </p>
                   <p className="mt-1 text-xs leading-5 text-gray-300">
                     {adquisition.catsPerSecond} Cats per Second
+                  </p>{" "}
+                  <p className="mt-1 text-xs leading-5 text-gray-300">
+                    {adquisition.quantity} quantity
                   </p>
                 </div>
                 <Button
                   color="primary"
+                  variant="shadow"
                   className="ml-2"
                   onClick={() => buyStore(adquisition.id)}
                   isDisabled={cats < adquisition.price}
@@ -85,9 +85,9 @@ export default function Store() {
                 </Button>
               </li>
               <Divider orientation="horizontal" />
-            </>
+            </React.Fragment>
           ))}
       </ul>
-    </section>
+    </Card>
   )
 }
