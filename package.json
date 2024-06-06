@@ -17,6 +17,7 @@
 		"@nextui-org/input": "^2.1.21",
 		"@nextui-org/kbd": "^2.0.28",
 		"@nextui-org/link": "^2.0.29",
+		"@nextui-org/modal": "^2.0.35",
 		"@nextui-org/navbar": "^2.0.30",
 		"@nextui-org/snippet": "^2.0.35",
 		"@nextui-org/switch": "^2.0.28",
