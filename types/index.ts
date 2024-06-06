@@ -43,6 +43,7 @@ export interface State {
   setStores: (newStores: Store[]) => void
   setUpgrades: (newUpgrades: Upgrade[]) => void
   increaseCats: () => void
+  clickCats: () => void
   removeAllCats: () => void
   updateCats: (newCats: number) => void
   setPlaying: (value: boolean) => void
