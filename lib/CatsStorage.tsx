@@ -1,59 +1,66 @@
 import create from "zustand"
 import stores from "@/lib/store.json"
 import upgrades from "@/lib/upgrades.json"
-import type { Store, Upgrade } from "@/types"
+import type { State, Store, Upgrade } from "@/types"
+import { persist, createJSONStorage } from "zustand/middleware"
 import React from "react"
 
-interface State {
-  playing: boolean
-  cats: number
-  catsPerSecond: number
-  setCatsPerSecond: (newCPS: number) => void
-  upgrades: Upgrade[]
-  stores: Store[]
-  fetchUpgrades: () => void
-  fetchStores: () => void
-  setStores: (newStores: Store[]) => void
-  increaseCats: () => void
-  removeAllCats: () => void
-  updateCats: (newCats: number) => void
-  setPlaying: (value: boolean) => void
-  reset: () => void
-}
+export const useStore = create<State>(
+  persist(
+    (set) => ({
+      playing: false,
+      cats: 0,
+      catsPerSecond: 0,
+      clickPower: 1,
+      stores: [],
+      upgrades: [],
+      setCatsPerSecond: (newCPS: number) => {
+        set({ catsPerSecond: newCPS })
+      },
+      setClickPower: (newClickPower: number) => {
+        set({ clickPower: newClickPower })
+      },
+      increaseCats: () =>
+        set((state) => ({ cats: state.cats + state.clickPower })),
+      removeAllCats: () => set({ cats: 0 }),
+      updateCats: (newCats) => set({ cats: newCats }),
 
-export const useStore = create<State>((set) => ({
-  playing: false,
-  cats: 0,
-  catsPerSecond: 0,
-  stores: [],
-  upgrades: [],
-  setCatsPerSecond: (newCPS: number) => {
-    set({ catsPerSecond: newCPS })
-  },
-  increaseCats: () => set((state) => ({ cats: state.cats + 1 })),
-  removeAllCats: () => set({ cats: 0 }),
-  updateCats: (newCats) => set({ cats: newCats }),
+      fetchStores: () => {
+        set({ stores })
+      },
 
-  fetchStores: () => {
-    set({ stores })
-  },
+      setStores: (newStores: Store[]) => {
+        set({ stores: newStores })
+      },
 
-  setStores: (newStores: Store[]) => {
-    set({ stores: newStores })
-  },
+      setUpgrades: (newUpgrades: Upgrade[]) => {
+        set({ upgrades: newUpgrades })
+      },
 
-  fetchUpgrades: () => {
-    set({ upgrades })
-  },
+      fetchUpgrades: () => {
+        set({ upgrades })
+      },
 
-  setPlaying: (value: boolean) => {
-    set({ playing: value })
-  },
+      setPlaying: (value: boolean) => {
+        set({ playing: value })
+      },
 
-  reset: () => {
-    set({ cats: 0, stores: [], upgrades: [] })
-  },
-}))
+      reset: () => {
+        set({
+          cats: 0,
+          stores: [],
+          upgrades: [],
+          catsPerSecond: 0,
+          clickPower: 1,
+        })
+      },
+    }),
+    {
+      name: "cats-storage",
+      storage: createJSONStorage(() => localStorage),
+    }
+  )
+)
 
 const useAutoIncrementCats = () => {
   const { catsPerSecond, increaseCats } = useStore((state) => ({
