@@ -21,7 +21,7 @@ export default function Play() {
   }, [catsPerSecond, increasePassiveIncome])
 
   return (
-    <div>
+    <div className="bg-card border rounded-2xl p-2 flex flex-col gap-4">
       <h1>Miaudle</h1>
       <button onClick={() => incrementCats(1)}>
         <img src="cat.png" alt="cat" />

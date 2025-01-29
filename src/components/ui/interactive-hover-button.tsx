@@ -16,7 +16,7 @@ export const InteractiveHoverButton = React.forwardRef<
     <button
       ref={ref}
       className={cn(
-        "group relative w-auto overflow-hidden rounded-full border bg-background p-2 px-6 text-center font-semibold",
+        "group relative w-auto overflow-hidden rounded-2xl border bg-background p-2 px-6 text-center font-semibold",
         className
       )}
       {...props}
@@ -25,8 +25,8 @@ export const InteractiveHoverButton = React.forwardRef<
         <div
           className={
             canBuy
-              ? "h-2 w-2 rounded-full bg-green-300 transition-all duration-300 group-hover:scale-[100.8]"
-              : "h-2 w-2 rounded-full bg-red-500 transition-all duration-300 group-hover:scale-[100.8]"
+              ? "h-2 w-2 rounded-2xl bg-green-300 transition-all duration-300 group-hover:scale-[100.8]"
+              : "h-2 w-2 rounded-2xl bg-red-500 transition-all duration-300 group-hover:scale-[100.8]"
           }
         ></div>
         <span className="inline-block transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0">

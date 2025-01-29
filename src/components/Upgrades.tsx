@@ -25,7 +25,7 @@ export default function Upgrades() {
   return (
     <div>
       <h2>Upgrades</h2>
-      <ul>
+      <ul className="flex flex-col gap-2">
         <TooltipProvider>
           {unlockedUpgrades.map((upgradeId) => {
             const upgrade = upgrades.find((u) => u.id === upgradeId)
