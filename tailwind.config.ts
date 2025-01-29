@@ -57,21 +57,6 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
     },
-    animation: {
-      "border-width": "border-width 3s infinite alternate",
-    },
-    keyframes: {
-      "border-width": {
-        from: {
-          width: "10px",
-          opacity: "0",
-        },
-        to: {
-          width: "100px",
-          opacity: "1",
-        },
-      },
-    },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config
