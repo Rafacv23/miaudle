@@ -1,11 +1,41 @@
 [
   {
+    "id": "upgrade-1",
     "name": "Upgrade 1",
     "description": "Upgrade 1 description",
-    "image": "upgrade1.png",
-    "cost": 1000,
+    "img": "upgrade1.png",
+    "cost": 100,
     "priceIncrease": 10,
     "catsPerSecond": 1,
-    "unlockRequirements": ""
+    "unlockCondition": {
+      "totalCats": 50
+    }
+  },
+  {
+    "id": "super-click",
+    "name": "💥 Súper Click",
+    "img": "/images/super-click.png",
+    "description": "Cada click cuenta como 5 gatos.",
+    "cost": 120,
+    "catsPerSecond": 10,
+    "unlockCondition": { "clicks": 100 }
+  },
+  {
+    "id": "auto-cat",
+    "name": "🐱 Gato Automático",
+    "img": "/images/auto-cat.png",
+    "description": "Gana 1 gato por segundo automáticamente.",
+    "cost": 100,
+    "catsPerSecond": 100,
+    "unlockCondition": { "catsPerSecond": 50 }
+  },
+  {
+    "id": "super_lucky_cat",
+    "name": "Super Lucky Cat",
+    "description": "Cada 100 clics obtienes 500 gatos extra.",
+    "img": "/images/upgrades/super_lucky_cat.png",
+    "cost": 7500,
+    "catsPerSecond": 300,
+    "unlockCondition": { "upgradePurchases": { "super-click": 1 } }
   }
 ]
