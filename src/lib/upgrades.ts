@@ -1,5 +1,6 @@
-import upgrades from "./upgrades.json"
+import upgrades from "@/lib/data/upgrades.json"
+import { Upgrade } from "@/lib/types"
 
-export function getAllUpgrades() {
+export function getAllUpgrades(): Upgrade[] {
   return upgrades
 }
