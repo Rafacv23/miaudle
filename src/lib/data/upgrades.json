@@ -1,10 +1,10 @@
 [
   {
-    "id": "upgrade-1",
-    "name": "Upgrade 1",
-    "description": "Upgrade 1 description",
+    "id": "milk-glass",
+    "name": "🥛 Milk glass",
+    "description": "Gives you 1 cat per second",
     "img": "upgrade1.png",
-    "cost": 100,
+    "cost": 60,
     "catsPerSecond": 1,
     "unlockCondition": {
       "totalCats": 50
