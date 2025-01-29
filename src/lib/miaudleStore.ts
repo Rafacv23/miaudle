@@ -1,16 +1,5 @@
 import { create } from "zustand"
-import upgrades from "./upgrades.json"
-
-type Upgrade = {
-  id: string
-  name: string
-  description: string
-  img: string
-  cost: number
-  priceIncrease: number
-  catsPerSecond: number
-  unlockCondition: Record<string, number>
-}
+import upgrades from "@/lib/data/upgrades.json"
 
 type CatsStore = {
   totalCats: number
