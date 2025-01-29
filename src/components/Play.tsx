@@ -23,7 +23,10 @@ export default function Play() {
   return (
     <div className="bg-card border rounded-2xl p-2 flex flex-col gap-4">
       <h1>Miaudle</h1>
-      <button onClick={() => incrementCats(1)}>
+      <button
+        onClick={() => incrementCats(1)}
+        className="hover:scale-105 hover:transition-all"
+      >
         <img src="cat.png" alt="cat" />
       </button>
       <h3>Total cats: {totalCats}</h3>
