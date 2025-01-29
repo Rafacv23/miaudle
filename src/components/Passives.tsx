@@ -7,7 +7,7 @@ export default function Passives() {
       <ul>
         {getAllPassives().map((passive) => (
           <li key={passive.name}>
-            <h2>{passive.name}</h2>
+            <h3>{passive.name}</h3>
           </li>
         ))}
       </ul>
