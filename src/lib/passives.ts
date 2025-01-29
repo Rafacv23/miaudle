@@ -1,4 +1,4 @@
-import passives from "./passives.json"
+import passives from "@/lib/data/passives.json"
 
 export function getAllPassives() {
   return passives
