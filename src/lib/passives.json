@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Passive 1",
+    "description": "Passive 1 description",
+    "image": "passive1.png",
+    "cost": 1000,
+    "catsPerSecond": 10,
+    "unlockRequirements": ""
+  }
+]

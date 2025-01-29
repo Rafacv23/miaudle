@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Upgrade 1",
+    "description": "Upgrade 1 description",
+    "image": "upgrade1.png",
+    "cost": 1000,
+    "priceIncrease": 10,
+    "catsPerSecond": 1,
+    "unlockRequirements": ""
+  }
+]
