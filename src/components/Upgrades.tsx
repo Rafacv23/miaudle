@@ -3,6 +3,8 @@
 import { useMiaudleStore } from "@/lib/miaudleStore"
 import { getAllUpgrades } from "@/lib/upgrades"
 import { useEffect } from "react"
+import { TooltipProvider } from "@/components/ui/tooltip"
+import UpgradeCard from "./UpgradeCard"
 
 export default function Upgrades() {
   const upgrades = getAllUpgrades()
@@ -11,7 +13,6 @@ export default function Upgrades() {
     totalCats,
     catsPerSecond,
     clicks,
-    buyUpgrade,
     checkUnlockedUpgrades,
     unlockedUpgrades,
     ownedUpgrades,
@@ -25,24 +26,26 @@ export default function Upgrades() {
     <div>
       <h2>Upgrades</h2>
       <ul>
-        {unlockedUpgrades.map((upgradeId) => {
-          const upgrade = upgrades.find((u) => u.id === upgradeId)
-          if (upgrade) {
-            const timesBought = ownedUpgrades[upgradeId] || 0
-            const newCost = Math.floor(
-              upgrade!.cost * Math.pow(1.15, timesBought)
-            )
+        <TooltipProvider>
+          {unlockedUpgrades.map((upgradeId) => {
+            const upgrade = upgrades.find((u) => u.id === upgradeId)
+            if (upgrade) {
+              const timesBought = ownedUpgrades[upgradeId] || 0
+              const newCost = Math.floor(
+                upgrade!.cost * Math.pow(1.15, timesBought)
+              )
 
-            return (
-              <li key={upgrade.name} onClick={() => buyUpgrade(upgrade.id)}>
-                <h3>{upgrade.name}</h3>
-                <p>Times bought: {timesBought}</p>
-                <p>Cost: {newCost}</p>
-                <button>Buy</button>
-              </li>
-            )
-          }
-        })}
+              return (
+                <UpgradeCard
+                  key={upgrade.name}
+                  upgrade={upgrade}
+                  timesBought={timesBought}
+                  newCost={newCost}
+                />
+              )
+            }
+          })}
+        </TooltipProvider>
       </ul>
     </div>
   )
