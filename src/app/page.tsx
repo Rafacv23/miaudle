@@ -1,6 +1,7 @@
 import Passives from "@/components/Passives"
 import Play from "@/components/Play"
 import { ThemeSwitch } from "@/components/ThemeSwitch"
+import { buttonVariants } from "@/components/ui/button"
 import { Dock } from "@/components/ui/dock"
 import Upgrades from "@/components/Upgrades"
 import { GITHUB_REPO_URL, LINKEDIN_URL, PORTFOLIO_URL } from "@/lib/constants"
@@ -49,7 +50,7 @@ export default function Home() {
               key={item.name}
               href={item.url}
               rel="noreferrer"
-              className="p-2"
+              className={buttonVariants({ variant: "ghost", size: "icon" })}
             >
               <item.icon size={24} />
             </Link>
