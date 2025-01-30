@@ -35,8 +35,8 @@ export default function Play() {
         </button>
       </CardContent>
       <CardFooter>
-        <h3>Total cats: {totalCats}</h3>
-        <h3>Cats per second: {catsPerSecond}</h3>
+        <p>Total cats: {totalCats}</p>
+        <p>Cats per second: {catsPerSecond}</p>
         <p>Clicks totales: {clicks}</p>
       </CardFooter>
     </Card>
