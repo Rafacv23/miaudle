@@ -1,25 +1,33 @@
 import Passives from "@/components/Passives"
 import Play from "@/components/Play"
+import { ThemeSwitch } from "@/components/ThemeSwitch"
 import { Dock } from "@/components/ui/dock"
 import Upgrades from "@/components/Upgrades"
-import { Github, Info, Linkedin } from "lucide-react"
+import { GITHUB_REPO_URL, LINKEDIN_URL, PORTFOLIO_URL } from "@/lib/constants"
+import { Github, Info, Linkedin, User } from "lucide-react"
+import Link from "next/link"
 
 export default function Home() {
   const dockData = [
     {
       name: "Github",
       icon: Github,
-      url: "/",
+      url: GITHUB_REPO_URL,
     },
     {
       name: "Linkedin",
       icon: Linkedin,
-      url: "/",
+      url: LINKEDIN_URL,
+    },
+    {
+      name: "Rafa Canosa Portfolio",
+      icon: User,
+      url: PORTFOLIO_URL,
     },
     {
       name: "About",
       icon: Info,
-      url: "/",
+      url: "/about",
     },
   ]
 
@@ -37,10 +45,16 @@ export default function Home() {
       <div className="col-span-6 row-start-5">
         <Dock>
           {dockData.map((item) => (
-            <a key={item.name} href={item.url} className="p-2">
+            <Link
+              key={item.name}
+              href={item.url}
+              rel="noreferrer"
+              className="p-2"
+            >
               <item.icon size={24} />
-            </a>
+            </Link>
           ))}
+          <ThemeSwitch />
         </Dock>
       </div>
     </div>
