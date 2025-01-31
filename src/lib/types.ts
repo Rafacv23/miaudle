@@ -14,3 +14,15 @@ export type Upgrade = {
   catsPerSecond: number
   unlockCondition: UnlockCondition
 }
+
+export type Passive = {
+  id: string
+  name: string
+  description: string
+  image: string
+  cost: number
+  effect: { upgrades: Record<string, number> }
+  unlockCondition: UnlockCondition
+}
+
+export type PermanentUpgrade = Omit<Upgrade, "unlockCondition">
