@@ -23,7 +23,7 @@ export default function UpgradeCard({
   const canBuy = totalCats >= newCost
 
   return (
-    <li key={upgrade.name}>
+    <li key={upgrade.id}>
       <Tooltip>
         <TooltipTrigger asChild>
           <InteractiveHoverButton

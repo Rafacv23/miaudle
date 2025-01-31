@@ -41,7 +41,7 @@ export default function Upgrades() {
 
                 return (
                   <UpgradeCard
-                    key={upgrade.name}
+                    key={upgrade.id}
                     upgrade={upgrade}
                     timesBought={timesBought}
                     newCost={newCost}
