@@ -29,7 +29,7 @@
     "unlockCondition": { "catsPerSecond": 50 }
   },
   {
-    "id": "super_lucky_cat",
+    "id": "super-lucky-cat",
     "name": "Super Lucky Cat",
     "description": "Cada 100 clics obtienes 500 gatos extra.",
     "img": "/images/upgrades/super_lucky_cat.png",
