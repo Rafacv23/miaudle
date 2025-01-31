@@ -1,10 +1,41 @@
 [
   {
-    "name": "Passive 1",
-    "description": "Passive 1 description",
+    "id": "super-milk-glass",
+    "name": "Super milk glass",
+    "description": "Augments the milk glass cats per second by 10.",
+    "image": "passive1.png",
+    "cost": 10,
+    "effect": { "upgrades": { "milk-glass": 10 } },
+    "catsPerSecond": 10,
+    "unlockCondition": { "upgradePurchases": { "milk-glass": 2 } }
+  },
+  {
+    "id": "ultra-click",
+    "name": "Ultra click",
+    "description": "Augments the milk glass cats per second by 10.",
     "image": "passive1.png",
     "cost": 1000,
     "catsPerSecond": 10,
-    "unlockRequirements": ""
+    "unlockCondition": { "clicks": 100 }
+  },
+  {
+    "id": "super-cat",
+    "name": "🐱 Super Gato Automático",
+    "description": "Augments the milk glass cats per second by 10.",
+    "image": "passive1.png",
+    "cost": 1000,
+    "catsPerSecond": 10,
+    "unlockCondition": { "catsPerSecond": 50 }
+  },
+  {
+    "id": "ultra-lucky-cat",
+    "name": "Ultra lucky cat",
+    "description": "Augments the milk glass cats per second by 10.",
+    "image": "passive1.png",
+    "cost": 1000,
+    "catsPerSecond": 10,
+    "unlockCondition": {
+      "totalCats": 50
+    }
   }
 ]
