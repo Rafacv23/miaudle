@@ -25,7 +25,7 @@ export default function UpgradeCard({
   return (
     <li key={upgrade.name}>
       <Tooltip>
-        <TooltipTrigger>
+        <TooltipTrigger asChild>
           <InteractiveHoverButton
             canBuy={canBuy}
             cost={newCost}

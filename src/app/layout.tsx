@@ -8,6 +8,7 @@ import { ThemeSwitch } from "@/components/theme/ThemeSwitch"
 import { buttonVariants } from "@/components/ui/button"
 import { GITHUB_REPO_URL, LINKEDIN_URL, PORTFOLIO_URL } from "@/lib/constants"
 import { Github, Home, Info, Linkedin, User } from "lucide-react"
+import { Separator } from "@/components/ui/separator"
 
 const josefinSans = Josefin_Sans({
   variable: "--font-josefin-sans",
@@ -25,33 +26,37 @@ const taviraj = Taviraj({
   weight: ["400"],
 })
 
-const dockData = [
-  {
-    name: "Github",
-    icon: Github,
-    url: GITHUB_REPO_URL,
-  },
-  {
-    name: "Linkedin",
-    icon: Linkedin,
-    url: LINKEDIN_URL,
-  },
-  {
-    name: "Rafa Canosa Portfolio",
-    icon: User,
-    url: PORTFOLIO_URL,
-  },
-  {
-    name: "Home",
-    icon: Home,
-    url: "/",
-  },
-  {
-    name: "About",
-    icon: Info,
-    url: "/about",
-  },
-]
+const dockData = {
+  contact: [
+    {
+      name: "Github",
+      icon: Github,
+      url: GITHUB_REPO_URL,
+    },
+    {
+      name: "Linkedin",
+      icon: Linkedin,
+      url: LINKEDIN_URL,
+    },
+    {
+      name: "Rafa Canosa Portfolio",
+      icon: User,
+      url: PORTFOLIO_URL,
+    },
+  ],
+  navigation: [
+    {
+      name: "Home",
+      icon: Home,
+      url: "/",
+    },
+    {
+      name: "About",
+      icon: Info,
+      url: "/about",
+    },
+  ],
+}
 
 export const metadata: Metadata = {
   title: "Miaudle",
@@ -77,7 +82,7 @@ export default function RootLayout({
         >
           {children}
           <Dock>
-            {dockData.map((item) => (
+            {dockData.navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.url}
@@ -87,6 +92,18 @@ export default function RootLayout({
                 <item.icon size={24} />
               </Link>
             ))}
+            <Separator orientation="vertical" className="h-full" />
+            {dockData.contact.map((item) => (
+              <Link
+                key={item.name}
+                href={item.url}
+                rel="noreferrer"
+                className={buttonVariants({ variant: "ghost", size: "icon" })}
+              >
+                <item.icon size={24} />
+              </Link>
+            ))}
+            <Separator orientation="vertical" className="h-full" />
             <ThemeSwitch />
           </Dock>
         </ThemeProvider>
